@@ -12,6 +12,7 @@ namespace ConsoleApp2
     {
         ArrayList Beowulf;
         int counterletters = 0;
+        int linecount = 0;
         
         int countSpaces; 
         static void Main(string[] args)
@@ -47,8 +48,21 @@ namespace ConsoleApp2
                     return countSpaces;
                 }
 
+        public void lineCount()
+        {
+            string line;
+            TextReader reader = new StreamReader("U:/Users/730507/Beowulf.txt");
+            while ((line = reader.ReadLine()) != null)
+            {
+                linecount++;
             }
+            reader.Close();
+
+            Console.WriteLine(linecount);
 
         }
+
     }
-}
+
+        }
+    
