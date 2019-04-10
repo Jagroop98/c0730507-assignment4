@@ -61,8 +61,30 @@ namespace ConsoleApp2
             Console.WriteLine(linecount);
 
         }
+        public void countWords()
+        {
+            StreamReader pr = new StreamReader("U:/Users/730507/Beowulf.txt");
+            int counter = 0;
+            string delim = ",";
+            string[] fields = null;
+            string line = null;
+            while (!pr.EndOfStream)
+            {
+                line = pr.ReadLine();
+                line.Trim();
+                fields = line.Split(delim.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                counter += fields.Length;
+
+            }
+
+            pr.Close();
+            Console.WriteLine("the number of words in the text file is {0}", counter);
+
+
+        }
+
 
     }
 
-        }
+}
     
