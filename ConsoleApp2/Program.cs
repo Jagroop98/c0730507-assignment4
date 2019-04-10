@@ -19,6 +19,9 @@ namespace ConsoleApp2
         {
             Program a = new Program();
             a.Beowulf = new ArrayList();
+            a.countWords();
+            a.Foundnumbers();
+            
             a.ReadTextFiles();
         }
 
@@ -80,6 +83,43 @@ namespace ConsoleApp2
             pr.Close();
             Console.WriteLine("the number of words in the text file is {0}", counter);
 
+
+        }
+
+        public void Foundnumbers()
+        {
+            using (StreamReader file = new StreamReader("U:/Users/730507/Beowulf.txt"))
+
+            {
+                int counter = 0;
+
+                int number = 0;
+
+                string line;
+
+                while ((line = file.ReadLine()) != null)
+
+                {
+
+                    if (line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
+
+                    {
+
+                        int x = counter - 1;
+
+                        number++;
+
+                    }
+
+                    counter++;
+
+                }
+
+                Console.WriteLine($"The number of lines that contains *Sea* and *Fare* are {number}");
+
+                file.Close();
+
+            }
 
         }
 
