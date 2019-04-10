@@ -11,6 +11,9 @@ namespace ConsoleApp2
     class Program
     {
         ArrayList Beowulf;
+        int counterletters = 0;
+        
+        int countSpaces; 
         static void Main(string[] args)
         {
             Program a = new Program();
@@ -31,6 +34,17 @@ namespace ConsoleApp2
                 {
                     Console.WriteLine(line);
                     Beowulf.Add(line);
+                }
+            }
+        }
+                public int FindNumberOfBlankSpaces(string line)
+                {
+                    foreach (char c in line)
+                    {
+                        if (char.IsLetter(c)) { counterletters++; }
+                        if (char.IsWhiteSpace(c)) { countSpaces++; }
+                    }
+                    return countSpaces;
                 }
 
             }
